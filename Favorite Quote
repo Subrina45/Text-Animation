@@ -1,0 +1,26 @@
+import tkinter as tk
+
+root = tk.Tk()
+root.geometry('400x400')
+root.tk_setPalette('purple')
+
+index = 0
+txt = ['W|', 'We|', 'We R|', 'We Ri|', 'We Ris|', 'We Rise|', 'We Rise B|', 'We Rise By|', 'We Rise By L|', 'We Rise By Li|',
+      'We Rise By Lif|', 'We Rise By Lift|', 'We Rise By Lifti|', 'We Rise By Liftin|', 'We Rise By Lifting|', 'We Rise By Lifting O|',
+      'We Rise By Lifting Ot|', 'We Rise By Lifting Oth|', 'We Rise By Lifting Othe|', 'We Rise By Lifting Other|', 'We Rise By Lifting Others|']
+
+def start_animation():
+    global index
+    
+        
+    text_animation_lb.config(text=txt[index])
+    index += 1
+        
+    root.after(500, start_animation)
+        
+    
+text_animation_lb = tk.Label(root, text='|', font=('Display', 80))
+text_animation_lb.pack(pady=20)
+
+root.after(1000, start_animation)
+root.mainloop()
